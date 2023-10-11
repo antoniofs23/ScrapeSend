@@ -3,22 +3,21 @@ import ScrapeRates as sr
 import schedule
 import time
 
-#send daily mortgage rates to participating phone numbers every day at 4:05PM 
 def job():
     
     currentRates = sr.ScrapeRates()
     rates = "".join(currentRates)
-    my_messenger = Messenger('antoniofs23', 'ybxl vhbl qwoy lxid') #username / pass
+    my_messenger = Messenger('username', 'password') #username / pass
 
     # all of the enlisted phone numbers
-    num2send = ['7862711159']
+    num2send = ['phone number']
 
     for num in num2send:
         # Build the message
         number    = num # Example US phone number
         gateway   = '@tmomail.net' # For a tmobile number
-        subject   = 'Automated: CurrentMortgageRates 30-year Fixed:'
-        body      = rates
+        subject   = 'subject'
+        body      = 'body'
         msg       = SMS(number, gateway, subject, body)
 
         # Send the message
@@ -31,10 +30,3 @@ schedule.every().day.at("16:05").do(job)
 while True:
     schedule.run_pending()
     time.sleep(60) # wait one minute
-
-# to kill all running processes in the terminal
-# ps -ef >> view running processes
-# kill -9 ID [3rd col is ID] >> for kill process
-
-## ps aux | grep java
-## killall python
