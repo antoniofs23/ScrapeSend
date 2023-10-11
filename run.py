@@ -25,6 +25,7 @@ def job():
     
     return
 
+#can run in the background as a nohub request
 schedule.every().day.at("16:05").do(job)
 
 while True:
