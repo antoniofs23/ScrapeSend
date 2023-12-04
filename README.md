@@ -15,5 +15,7 @@ where `process ID` is the given ID
 
 The `pyMessenger.py` script using the built in SMTP library is not my own and was found through googling. This script is what allows to send SMS messages via python through your gmail client
 
+The scraping is done using the `bs4` python package that imports `beautifulsoup`
+
 ### Example:
 The current code scrapes `mortgagenewsdaily.com` and sends daily updated mortgage rates to a list of subscribers
